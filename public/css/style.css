@@ -102,6 +102,7 @@ input, select{
 
 .is-invalid {
   color: #842029;
+  border-color: #842029;
 }
 
 .alert-warning{
@@ -109,4 +110,25 @@ input, select{
   background-color: #F8D7DA;
   text-align: center;
   border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.error{
+  color:#842029;
+  background-color: #F8D7DA;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #842029;
+}
+
+.alert-ok{
+  color:#2c8420;
+  background-color: #d7f8df;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
 }

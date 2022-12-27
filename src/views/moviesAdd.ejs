@@ -17,25 +17,26 @@
     <section id="formulario" >
         <article class="mostrarFormulario">
             <ul class="errores"></ul>
-            <form class="form" action="/movies/create" method="POST">
+            <form style="min-height: 655px" class="form" action="/movies/create" method="POST">
                 <label for="title">Titulo </label>
-                <div><input type="text" name="title" id="title" ></div>
+                <div style="display:flex; flex-direction: column; align-items: center; margin-bottom: 15px;"><input class="validateInput" type="text" name="title" id="title" ><small class="" id="errorTitle"></small></div>
                 <label for="rating">Calificación </label>
-                <div><input type="number" name="rating" id="rating" placeholder="Indicar valor entre 0 y 10"> </div>
+                <div style="display:flex; flex-direction: column; align-items: center; margin-bottom: 15px;"><input class="validateInput" type="number" name="rating" id="rating" placeholder="Indicar valor entre 0 y 10"><small class="" id="errorRating"></small></div>
                 <label for="awards">Premios </label>
-                <div><input type="number" name="awards" id="awards" placeholder="Indicar valor entre 0 y 10"></div>
+                <div style="display:flex; flex-direction: column; align-items: center; margin-bottom: 15px;"><input class="validateInput" type="number" name="awards" id="awards" placeholder="Indicar valor entre 0 y 10"><small class="" id="errorAwards"></small></div>
                 <label for="release_date">Fecha de creación </label>
-                <div><input type="date" name="release_date" id="release_date" ></div>
+                <div style="display:flex; flex-direction: column; align-items: center; margin-bottom: 15px;"><input class="validateInput" type="date" name="release_date" id="release_date" ><small class="" id="errorRelease"></small></div>
                 <label for="length">Duración </label>
-                <div><input type="number" name="length" id="length" placeholder="Indicar duración entre 60 y 360 minutos" ></div>
+                <div style="display:flex; flex-direction: column; align-items: center; margin-bottom: 15px;"><input class="validateInput" type="number" name="length" id="length" placeholder="Indicar duración entre 60 y 360 minutos" ><small class="" id="errorLength"></small></div>
                 <label for="genreID">Género </label>
-                <div>
-                    <select name="genre_id" id="genre_id" >
+                <div style="display:flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+                    <select class="validateInput" name="genre_id" id="genre_id" >
                         <option value="" disabled selected>- Seleccione el género - </option>
                         <% allGenres.forEach(genre => { %>
                         <option value="<%= genre.id %>"><%= genre.name %></option>
                         <% }); %>
                     </select>
+                    <small class="" id="errorGenre"></small>
                 </div>
                 <br>
                 <div> <button class="botonAgregar" type="submit">Agregar</button>
@@ -46,3 +47,5 @@
     </section>
 </body>
 </html>
+
+<script src="/js/moviesAddValidation.js"></script>
